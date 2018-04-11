@@ -1,6 +1,6 @@
-from Tkinter import *
-import ttk 
-from tkFont import Font 
+from tkinter import *
+from tkinter import ttk 
+from tkinter import font 
 import time
 import datetime
 
@@ -24,7 +24,7 @@ root.after(1000, clock_time)
 fnt = font.Font(family='Helvetica', size=60, weight='bold')
 txt = StringVar()
 lbl = ttk.Label(root, textvariable=txt, font=fnt, foreground="white", background="black")
-lbl.place(relx=0.5, anchor=CENTER)
+lbl.place(relx=0.5, rely=0.5, anchor=CENTER)
 
 root.mainloop()
 
