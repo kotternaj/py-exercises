@@ -22,10 +22,53 @@ class Application(Frame):
 
         self.user_input.insert(0, "0")
 
+        # Buttons 7, 8, 9
         self.button1 = Button(self, bg = "#98dbc6", bd =12,
         text="7", padx = 33, pady = 25, font=("Helvetica", 20, "bold"),
         command = lambda : self.buttonClick(7))
         self.button1.grid(row = 2, column = 0, sticky = W)
+
+        self.button1 = Button(self, bg = "#98dbc6", bd =12,
+        text="8", padx = 33, pady = 25, font=("Helvetica", 20, "bold"),
+        command = lambda : self.buttonClick(8))
+        self.button1.grid(row = 2, column = 1, sticky = W)
+
+        self.button1 = Button(self, bg = "#98dbc6", bd =12,
+        text="9", padx = 33, pady = 25, font=("Helvetica", 20, "bold"),
+        command = lambda : self.buttonClick(9))
+        self.button1.grid(row = 2, column = 2, sticky = W)
+        
+        # Buttons 4, 5, 6
+        self.button1 = Button(self, bg = "#98dbc6", bd =12,
+        text="4", padx = 33, pady = 25, font=("Helvetica", 20, "bold"),
+        command = lambda : self.buttonClick(4))
+        self.button1.grid(row = 3, column = 0, sticky = W)
+
+        self.button1 = Button(self, bg = "#98dbc6", bd =12,
+        text="5", padx = 33, pady = 25, font=("Helvetica", 20, "bold"),
+        command = lambda : self.buttonClick(5))
+        self.button1.grid(row = 3, column = 1, sticky = W)
+
+        self.button1 = Button(self, bg = "#98dbc6", bd =12,
+        text="6", padx = 33, pady = 25, font=("Helvetica", 20, "bold"),
+        command = lambda : self.buttonClick(6))
+        self.button1.grid(row = 3, column = 2, sticky = W)
+
+        # Buttons 1, 2, 3
+        self.button1 = Button(self, bg = "#98dbc6", bd =12,
+        text="1", padx = 33, pady = 25, font=("Helvetica", 20, "bold"),
+        command = lambda : self.buttonClick(3))
+        self.button1.grid(row = 4, column = 0, sticky = W)
+
+        self.button1 = Button(self, bg = "#98dbc6", bd =12,
+        text="2", padx = 33, pady = 25, font=("Helvetica", 20, "bold"),
+        command = lambda : self.buttonClick(3))
+        self.button1.grid(row = 4, column = 1, sticky = W)
+
+        self.button1 = Button(self, bg = "#98dbc6", bd =12,
+        text="3", padx = 33, pady = 25, font=("Helvetica", 20, "bold"),
+        command = lambda : self.buttonClick(3))
+        self.button1.grid(row = 4, column = 2, sticky = W)
 
 
 calculator = Tk()
