@@ -70,7 +70,7 @@ class Application(Frame):
         command = lambda : self.buttonClick(3))
         self.button9.grid(row = 4, column = 2, sticky = W)
         
-        # 0
+        # 0 and arithmetic operators
         self.button10 = Button(self, bg = "#98dbc6", bd =12,
         text="0", padx = 33, pady = 25, font=("Helvetica", 20, "bold"),
         command = lambda : self.buttonClick(0))
@@ -97,15 +97,28 @@ class Application(Frame):
         self.Divbutton.grid(row = 5, column = 3, sticky = W)
 
         self.Equalbutton = Button(self, bg = "#e6d72a", bd =12,
-        text="=", padx = 33, pady = 25, font=("Helvetica", 20, "bold"),
-        command = lambda : self.buttonClick(0))
+        text="=", padx = 100, pady = 25, 
+        command = self.CalcuateTask, font=("Helvetica", 20, "bold")),
         self.Equalbutton.grid(row = 5, column = 1, sticky = W)
 
         self.Clearbutton = Button(self, bg = "#e6d72a", bd =12,
         text="AC", padx = 33, pady = 25, font=("Helvetica", 20, "bold"),
-        command = lambda : self.buttonClick(0))
-        self.Clearbutton.grid(row = 5, column = 2, sticky = W)
+        command = self.ClearDisplay
+        self.Clearbutton.grid(row = 1, column = 4, sticky = W)
 
+def buttonClick(self, number):
+    self.task = str(self.task) + str(number)
+    self.UserIn.set(self.task)
+
+def CalcuateTask(self):
+    self.data = self.user_input.get()
+    try:
+        self.answer = eval(self.data)
+        self.displayText(self.answer)
+        self.task = self.answer
+    except SyntaxError as e:
+        self.displayText("Invalid Syntax")
+        self.task = ''
 
 
 calculator = Tk()
