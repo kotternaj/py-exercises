@@ -98,28 +98,36 @@ class Application(Frame):
 
         self.Equalbutton = Button(self, bg = "#e6d72a", bd =12,
         text="=", padx = 100, pady = 25, 
-        command = self.CalcuateTask, font=("Helvetica", 20, "bold")),
-        self.Equalbutton.grid(row = 5, column = 1, sticky = W)
+        command = self.CalculateTask, font=("Helvetica", 20, "bold"))
+        self.Equalbutton.grid(row = 5, column = 1, sticky = W, columnspan = 2)
 
         self.Clearbutton = Button(self, bg = "#e6d72a", bd =12,
         text="AC", padx = 33, pady = 25, font=("Helvetica", 20, "bold"),
-        command = self.ClearDisplay
+        command = self.ClearDisplay)
         self.Clearbutton.grid(row = 1, column = 4, sticky = W)
 
-def buttonClick(self, number):
-    self.task = str(self.task) + str(number)
-    self.UserIn.set(self.task)
+    def buttonClick(self, number):
+        self.task = str(self.task) + str(number)
+        self.UserIn.set(self.task)
 
-def CalcuateTask(self):
-    self.data = self.user_input.get()
-    try:
-        self.answer = eval(self.data)
-        self.displayText(self.answer)
-        self.task = self.answer
-    except SyntaxError as e:
-        self.displayText("Invalid Syntax")
+    def CalculateTask(self):
+        self.data = self.user_input.get()
+        try:
+            self.answer = eval(self.data)
+            self.displayText(self.answer)
+            self.task = self.answer
+        except SyntaxError as e:
+            self.displayText("Invalid Syntax")
+            self.task = ''
+    
+    def displayText(self, value):
+        self.user_input.delete(0, END)
+        self.user_input.insert(0, value)
+
+    def ClearDisplay(self):
         self.task = ''
-
+        self.user_input.delete(0, END)
+        self.user_input.insert(0, 'O')
 
 calculator = Tk()
 
