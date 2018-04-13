@@ -57,12 +57,12 @@ class Application(Frame):
         # Buttons 1, 2, 3
         self.button7 = Button(self, bg = "#98dbc6", bd =12,
         text="1", padx = 33, pady = 25, font=("Helvetica", 20, "bold"),
-        command = lambda : self.buttonClick(3))
+        command = lambda : self.buttonClick(1))
         self.button7.grid(row = 4, column = 0, sticky = W)
 
         self.button8 = Button(self, bg = "#98dbc6", bd =12,
         text="2", padx = 33, pady = 25, font=("Helvetica", 20, "bold"),
-        command = lambda : self.buttonClick(3))
+        command = lambda : self.buttonClick(2))
         self.button8.grid(row = 4, column = 1, sticky = W)
 
         self.button9 = Button(self, bg = "#98dbc6", bd =12,
@@ -74,20 +74,20 @@ class Application(Frame):
         self.button10 = Button(self, bg = "#98dbc6", bd =12,
         text="0", padx = 33, pady = 25, font=("Helvetica", 20, "bold"),
         command = lambda : self.buttonClick(0))
-        self.button10.grid(row = 5, column = 2, sticky = W)
+        self.button10.grid(row = 5, column = 0, sticky = W)
 
         self.Addbutton = Button(self, bg = "#98dbc6", bd =12,
-        text="+", padx = 33, pady = 25, font=("Helvetica", 20, "bold"),
+        text="+", padx = 36, pady = 25, font=("Helvetica", 20, "bold"),
         command = lambda : self.buttonClick('+'))
         self.Addbutton.grid(row = 2, column = 3, sticky = W)
 
         self.Subbutton = Button(self, bg = "#98dbc6", bd =12,
-        text="-", padx = 33, pady = 25, font=("Helvetica", 20, "bold"),
+        text="-", padx = 39, pady = 25, font=("Helvetica", 20, "bold"),
         command = lambda : self.buttonClick('-'))
         self.Subbutton.grid(row = 3, column = 3, sticky = W)
 
         self.Multbutton = Button(self, bg = "#98dbc6", bd =12,
-        text="*", padx = 33, pady = 25, font=("Helvetica", 20, "bold"),
+        text="*", padx = 38, pady = 25, font=("Helvetica", 20, "bold"),
         command = lambda : self.buttonClick('*'))
         self.Multbutton.grid(row = 4, column = 3, sticky = W)
 
@@ -102,9 +102,9 @@ class Application(Frame):
         self.Equalbutton.grid(row = 5, column = 1, sticky = W, columnspan = 2)
 
         self.Clearbutton = Button(self, bg = "#e6d72a", bd =12,
-        text="AC", padx = 33, pady = 25, font=("Helvetica", 20, "bold"),
+        text="AC", padx = 7, width= 28, font=("Helvetica", 20, "bold"),
         command = self.ClearDisplay)
-        self.Clearbutton.grid(row = 1, column = 4, sticky = W)
+        self.Clearbutton.grid(row = 1, columnspan = 4, sticky = W)
 
     def buttonClick(self, number):
         self.task = str(self.task) + str(number)
